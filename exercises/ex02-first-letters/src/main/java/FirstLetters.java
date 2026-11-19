@@ -25,7 +25,19 @@ public class FirstLetters {
      * @return the first character of each word, concatenated
      */
     public static String firstLetters(String words) {
-        // TODO: complete
-        return "";
+        StringBuilder sb = new StringBuilder();
+
+        // 1. 先把第一个单词的首字母加进去
+        sb.append(words.charAt(0));
+
+        // 2. 遍历整个字符串，找空格
+        for (int i = 1; i < words.length(); i++) {
+            // 如果当前字符是空格，说明下一个字符是新单词的首字母
+            if (words.charAt(i) == ' ') {
+                sb.append(words.charAt(i + 1));
+            }
+        }
+
+        return sb.toString();
     }
 }
